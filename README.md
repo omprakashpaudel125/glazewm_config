@@ -1,0 +1,1 @@
+# glazewm_config
