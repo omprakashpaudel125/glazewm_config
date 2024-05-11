@@ -41,15 +41,15 @@ bar:
       time_formatting: "hh:mm:ss tt  ddd d MMM yyyy"
       margin: "0 10px 0 10px"
     - type: "battery"
-      draining: "{battery_level}%"
-      power_saver: "{battery_level}%(power saver)"
-      charging: "{battery_level}%(charging)"
+      label_draining: "🔋{battery_level}%"
+      label_power_saver: "🔋{battery_level}% (power saver)"
+      label_charging: "🔋{battery_level}% (charging)"
       margin: "0 2px 0 2px"
     - type: "volume"
-      label_low: "🔊{voulme_level}%"
-      label_medium: "🔊{voulme_level}%"
-      label_high: "🔊{voulme_level}%"
-      label_mute: "🔊{voulme_level}%"
+      label_low: "🔊{volume_level}%"
+      label_medium: "🔊{volume_level}%"
+      label_high: "🔊{volume_level}%"
+      label_mute: "🔊{volume_level}%"
       margin: "0 2px 0 2px"
     - type: "memory"
       label: "RAM:{percent_usage}%"
@@ -63,6 +63,8 @@ bar:
       label_wifi_strength_0: "WiFi: 0%"
       label_wifi_strength_25: "WiFi: 25%"
 workspaces:
+  - name: "0"
+    display_name: "0 "
   - name: "1"
     display_name: "1  "
   - name: "2"
@@ -213,6 +215,8 @@ keybindings:
     binding: "Alt+Shift+T"
 
   # Change focus to a workspace defined in `workspaces` config.
+  - command: "focus workspace 0"
+    binding: "Alt+0"
   - command: "focus workspace 1"
     binding: "Alt+1"
   - command: "focus workspace 2"
@@ -243,6 +247,9 @@ keybindings:
     binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
+
+  - commands: ["move to workspace 0", "focus workspace 0"]
+    binding: "Alt+Shift+0"
   - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
