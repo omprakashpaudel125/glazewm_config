@@ -15,10 +15,9 @@ https://github.com/omprakashpaudel125/glazewm_config/assets/73826330/ce6331de-88
 
 # config.yaml
 (Usage of Alt+F Alt+X are swapped 😊)
-```plaintext
-gaps:
-  inner_gap: 2
-  outer_gap: 2
+```plaintextgaps:
+  inner_gap: 0
+  outer_gap: 0
 
 general:
   # Whether to show floating windows as always on bottom.
@@ -40,9 +39,10 @@ bar:
     - type: "workspaces"
       focused_workspace_background: "#00b3b3"
       displayed_workspace_background: "#42403e33"
-      default_workspace_background: "transparent"
-  components_center:
-    - type: "window title"
+      default_workspace_background:
+        "transparent"
+        #  components_center:
+        #- type: "window title"
   components_right:
     - type: "tiling direction"
       label_horizontal: "⮂"
@@ -58,10 +58,30 @@ bar:
       time_formatting: "hh:mm:ss tt  ddd d MMM yyyy"
       margin: "0 10px 0 10px"
     - type: "battery"
-      draining: "{battery_level}% 🔋 remaining"
-      power_saver: "{battery_level}% 🔁 (power saver)"
-      charging: "{battery_level}% ⚡ (charging)"
+      label_draining: "🔋{battery_level}%"
+      label_power_saver: "🔋{battery_level}% (power saver)"
+      label_charging: "🔋{battery_level}% (charging)"
+      margin: "0 2px 0 2px"
+    - type: "volume"
+      label_low: "🔊{volume_level}%"
+      label_medium: "🔊{volume_level}%"
+      label_high: "🔊{volume_level}%"
+      label_mute: "🔊{volume_level}%"
+      margin: "0 2px 0 2px"
+    - type: "memory"
+      label: "RAM:{percent_usage}%"
+      margin: "0 2px 0 2px"
+      # How often this counter is refreshed.
+      refresh_interval_ms: 1000
+    - type: "network"
+      label_no_internet: "NC"
+      label_ethernet: "Eth"
+      label_wifi_name: "{wifi_name}%"
+      label_wifi_strength_0: "WiFi: 0%"
+      label_wifi_strength_25: "WiFi: 25%"
 workspaces:
+  - name: "0"
+    display_name: "0 "
   - name: "1"
     display_name: "1  "
   - name: "2"
@@ -123,6 +143,11 @@ binding_modes:
         bindings: ["Escape", "Enter"]
 
 keybindings:
+  # Flow Launcher which is equivalent to Rofi in linux!! LOL
+  # Download Flow Launcher https://www.flowlauncher.com/
+  # Add path for your application Launcher here
+  - command: "exec 'C:\\Users\\opaudel\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Flow Launcher\\Flow Launcher.lnk'"
+    bindings: ["Alt+D"]
   # Shift focus in a given direction.
   - command: "focus left"
     bindings: ["Alt+H", "Alt+Left"]
@@ -207,6 +232,8 @@ keybindings:
     binding: "Alt+Shift+T"
 
   # Change focus to a workspace defined in `workspaces` config.
+  - command: "focus workspace 0"
+    binding: "Alt+0"
   - command: "focus workspace 1"
     binding: "Alt+1"
   - command: "focus workspace 2"
@@ -237,6 +264,9 @@ keybindings:
     binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
+
+  - commands: ["move to workspace 0", "focus workspace 0"]
+    binding: "Alt+Shift+0"
   - commands: ["move to workspace 1", "focus workspace 1"]
     binding: "Alt+Shift+1"
   - commands: ["move to workspace 2", "focus workspace 2"]
@@ -255,6 +285,5 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9", "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
-
 ```
 
