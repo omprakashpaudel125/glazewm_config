@@ -60,7 +60,7 @@ bar:
     - type: "battery"
       label_draining: "🔋{battery_level}%"
       label_power_saver: "🔋{battery_level}% (power saver)"
-      label_charging: "🔋{battery_level}% (charging)"
+      label_charging: "⚡{battery_level}% (charging)"
       margin: "0 2px 0 2px"
     - type: "volume"
       label_low: "🔊{volume_level}%"
