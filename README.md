@@ -5,6 +5,9 @@ All keybindings are similar to vim (h, j , k , l), while $mod key is Alt
 
 Inspired by design of : https://gist.github.com/alexanderi96
 
+I use flow launcher for rofi type setup in windows
+https://www.flowlauncher.com/
+
 scroll down for config file
 <hr>
  
