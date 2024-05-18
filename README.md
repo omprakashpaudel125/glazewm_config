@@ -19,6 +19,7 @@ https://github.com/omprakashpaudel125/glazewm_config/assets/73826330/ce6331de-88
 # config.yaml
 (Usage of Alt+F Alt+X are swapped 😊)
 ```plaintextgaps:
+gaps:
   inner_gap: 0
   outer_gap: 0
 
