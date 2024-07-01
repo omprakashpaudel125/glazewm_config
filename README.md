@@ -20,19 +20,26 @@ https://github.com/omprakashpaudel125/glazewm_config/assets/73826330/ce6331de-88
 (Usage of Alt+F Alt+X are swapped 😊)
 ```plaintextgaps:
 gaps:
-  inner_gap: 0
-  outer_gap: 0
+  inner_gap: "0"
+  outer_gap: "0"
 
 general:
   # Whether to show floating windows as always on bottom.
   show_floating_on_bottom: true
+  focus_follows_cursor: false
+  # Whether to jump the cursor between windows focused by the WM.
+  cursor_follows_focus: false
 
 bar:
   height: "30px"
   position: "bottom"
-  opacity: 1.0
-  background: "#101010c4"
-  foreground: "#ffffff"
+  opacity:
+    1.0
+    # background: "#101010c4"
+  background:
+    "#89CFF0"
+    #  foreground: "#ffffff"
+  foreground: "#000000"
   font_family: "Cascadia Code"
   font_size: "13px"
   padding: "4px 6px"
@@ -50,12 +57,13 @@ bar:
   components_right:
     - type: "tiling direction"
       label_horizontal: "⮂"
-      label_vertical: "⮁"
-      background: "#8192B333"
+      label_vertical:
+        "⮁"
+        #background: "#8192B3"
       margin: "0 4px"
       padding: "0 8px"
     - type: "binding mode"
-      background: "#8192B333"
+      #background: "#8192B3"
       margin: "0 4px 0 0"
       padding: "0 8px"
     - type: "clock"
@@ -289,5 +297,6 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9", "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
+
 ```
 
